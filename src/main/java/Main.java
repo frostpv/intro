@@ -15,6 +15,6 @@ public class Main {
         User ira = new User();
         ira.setEmail("irina@gmail.com");
         ira.setName("Irina");
-        userService.add(vasya);
+        userService.add(ira);
     }
 }
