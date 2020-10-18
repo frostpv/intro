@@ -15,7 +15,6 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
         "service"
 })
 public class AppConfig {
-
     @Bean
     public DataSource getDataSource() {
         BasicDataSource basicDataSource = new BasicDataSource();
