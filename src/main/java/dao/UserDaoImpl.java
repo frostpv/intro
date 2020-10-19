@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
                 transaction.rollback();
             }
             throw new DataProcessingException("Can't insert user "
-                    + user + " into data", e);
+                    + user + " into db", e);
         } finally {
             if (session != null) {
                 session.close();
