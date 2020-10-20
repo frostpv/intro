@@ -2,21 +2,23 @@ package controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@Controller
 @RestController
+@RequestMapping("/user")
 public class UserController {
-    @GetMapping(value = "/user/{userId}")
-    public String getUser() {
-        return "";
+    @GetMapping(value = "/{userId}")
+    public String getUser(@PathVariable Long userId) {
+        return ""+userId;
     }
 
-    @GetMapping(value = "/user/inject")
+    @GetMapping(value = "/inject")
     public String injectUser() {
         return "test inject";
     }
-    @GetMapping(value = "/user/")
+    @GetMapping(value = "/")
     public String getAllUser() {
         return "users-test";
     }
