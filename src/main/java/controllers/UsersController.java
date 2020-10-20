@@ -5,8 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class UsersController {
-    @GetMapping(value = "/user/{userId}")
+    @GetMapping(value = "/users/")
     public String getAllUser() {
-        return "";
+        return "users";
     }
 }
