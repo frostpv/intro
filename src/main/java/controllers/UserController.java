@@ -19,12 +19,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(value = "/{userId}")
+    @GetMapping("/{userId}")
     public UserResponseDto getUser(@PathVariable Long userId) {
         return transformUserToUserResponseDto(userService.getById(userId));
     }
 
-    @GetMapping(value = "/inject")
+    @GetMapping("/inject")
     public void injectUser() {
         User vasya = new User();
         vasya.setEmail("frostpv@gmail.com");
@@ -36,7 +36,7 @@ public class UserController {
         userService.add(ira);
     }
 
-    @GetMapping(value = "/")
+    @GetMapping
     public List<UserResponseDto> getAllUser() {
         return userService.listUsers().stream()
                 .map(this::transformUserToUserResponseDto)
