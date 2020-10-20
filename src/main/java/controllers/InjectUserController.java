@@ -1,11 +1,11 @@
 package controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class InjectUserController {
-    @PostMapping
+    @GetMapping(value = "/user/inject")
     public void injectUser() {
 
     }
