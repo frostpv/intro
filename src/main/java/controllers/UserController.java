@@ -44,6 +44,9 @@ public class UserController {
     }
 
     private UserResponseDto transformUserToUserResponseDto(User user) {
-        return new UserResponseDto(user.getId(), user.getName());
+        UserResponseDto userResponseDto = new UserResponseDto();
+        userResponseDto.setId(user.getId());
+        userResponseDto.setName(user.getName());
+        return userResponseDto;
     }
 }
