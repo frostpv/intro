@@ -1,14 +1,14 @@
 package controllers;
 
 import dto.UserResponseDto;
+import java.util.List;
+import java.util.stream.Collectors;
 import models.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import service.UserService;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/user")
@@ -35,6 +35,7 @@ public class UserController {
         ira.setName("Irina");
         userService.add(ira);
     }
+
     @GetMapping(value = "/")
     public List<UserResponseDto> getAllUser() {
         return userService.listUsers().stream()
