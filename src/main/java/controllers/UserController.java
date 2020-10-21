@@ -21,7 +21,7 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public UserResponseDto getUser(@PathVariable Long userId) {
-        return transformUserToUserResponseDto(userService.getById(userId));
+        return transformToResponseDto(userService.getById(userId));
     }
 
     @GetMapping("/inject")
@@ -39,11 +39,11 @@ public class UserController {
     @GetMapping
     public List<UserResponseDto> getAllUser() {
         return userService.listUsers().stream()
-                .map(this::transformUserToUserResponseDto)
+                .map(this::transformToResponseDto)
                 .collect(Collectors.toList());
     }
 
-    private UserResponseDto transformUserToUserResponseDto(User user) {
+    private UserResponseDto transformToResponseDto(User user) {
         UserResponseDto userResponseDto = new UserResponseDto();
         userResponseDto.setId(user.getId());
         userResponseDto.setName(user.getName());
